@@ -40,6 +40,341 @@
                     <p>Please put all information needed for participant: <span class="js-pid pid"></span></p>
 
                     <form id="pre-expt-form">
+                        
+                        <!-- [MARK]: Question 1 -->
+                        <div class="form-group">
+                            <label for="q1">Are you...</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q1" id="optionsRadios1" value="left-handed">
+                                Left-Handed
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q1" id="optionsRadios2" value="right-handed">
+                                Right-Handed
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- [MARK]: Question 2 -->
+                        <div class="form-group">
+                            <label for="q2">How often do you use a computer a day, overall?</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q2" id="optionsRadios1" value="less_than_one_hour">
+                                Less than 1 hour
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q2" id="optionsRadios2" value="one_two_hour">
+                                1 - 2 hours
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q2" id="optionsRadios2" value="three_four_hour">
+                                3 - 4 hours
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q2" id="optionsRadios2" value="five_six_hour">
+                                5 - 6 hours
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q2" id="optionsRadios2" value="more_than_six_hour">
+                                More than 6 hours
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- [MARK]: Question 3 -->
+                        <div class="form-group">
+                            <label for="q3">How familiar are you with text editors?</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q3" id="optionsRadios1" value="never">
+                                Never use them
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q3" id="optionsRadios2" value="not_familiar">
+                                Not very familiar
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q3" id="optionsRadios2" value="familiar">
+                                Familiar
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q3" id="optionsRadios2" value="expert">
+                                Expert
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- [MARK]: Question 4 -->
+                        <div class="form-group">
+                            <label for="q4">Which text editors are you the most familiar with (if it applies)?</label>
+                            <textarea class="form-control" id="q4" name="q4" placeholder="Enter your response"></textarea>
+                        </div>
+                        
+                        <!-- [MARK]: Question 5 -->
+                        <div class="form-group">
+                            <label for="q5">How many different documents (text document, webpage, pdf, …) are opened on your
+desktop at a time overall?</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q5" id="optionsRadios1" value="at_most_1">
+                                At most 1
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q5" id="optionsRadios2" value="two_to_five">
+                                2 - 5 at the same time
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q5" id="optionsRadios2" value="five_to_ten">
+                                5 - 10 at the same time
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q5" id="optionsRadios2" value="more_than_ten">
+                                More than 10
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- [MARK]: Question 6 -->
+                        <div class="form-group">
+                            <label for="q6">How often do you use keyboard shortcuts?</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q6" id="optionsRadios1" value="never">
+                                Never
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q6" id="optionsRadios2" value="rarely">
+                                Rarely
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q6" id="optionsRadios2" value="regularly">
+                                Regularly
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q6" id="optionsRadios2" value="all_the_time">
+                                All the time
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- [MARK]: Question 7 -->
+                        <div class="form-group">
+                            <label for="q7">Which shortcuts are you using the most (if it applies)?</label>
+                            <textarea class="form-control" id="q7" name="q7" placeholder="Enter your response"></textarea>
+                        </div>
+                        
+                        <!-- [MARK]: Question 8 -->
+                        <div class="form-group">
+                            <label for="q8">Please indicate your gender</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q8" id="optionsRadios1" value="male">
+                                Male
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q8" id="optionsRadios2" value="female">
+                                Female
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- [MARK]: Question 9 -->
+                        <div class="form-group">
+                            <label for="q9">Please indicate your age</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q9" id="optionsRadios1" value="18_20">
+                                18 - 20
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q9" id="optionsRadios2" value="21_23">
+                                21 - 23
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q9" id="optionsRadios2" value="24_26">
+                                24 - 26
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q9" id="optionsRadios2" value="27_29">
+                                27 - 29
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q9" id="optionsRadios2" value="30_32">
+                                30 - 32
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q9" id="optionsRadios2" value="33_35">
+                                33 - 35
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- [MARK]: Question 10 -->
+                        <div class="form-group">
+                            <label for="q10">Question 2 - Radio</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q2" id="optionsRadios1" value="1">
+                                Homemaker
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="2">
+                                Student
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="3">
+                                Unemployed
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="4">
+                                Agriculture, Forestry, Fishing, or Hunting
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="5">
+                                Arts, Entertainment, or Recreation
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="6">
+                                Broadcasting
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="7">
+                                Education
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="8">
+                                Construction
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="9">
+                                Finance and Insurance
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="10">
+                                Government and Public Administration
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="11">
+                                Health Care and Social Assistance
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="12">
+                                Hotel and Food Services
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="13">
+                                Information - Services and Data
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="14">
+                                Legal Services
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="15">
+                                Manufacturing - Computer and Electronics
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="16">
+                                Military
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="17">
+                                Real Estate, Rental, or Leasing
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="18">
+                                Retail
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios2" value="19">
+                                Scientific or Technical Services
+                              </label>
+                            </div>
+                            <div class="radio">
+                               <label for="q1">Other:</label>
+                            <input type="text" class="form-control" id="q1" name="q1" placeholder="Enter your answer">
+                            </div>    
+                        </div>
+                        
+                        <!--
                         <div class="form-group">
                             <label for="q1">Question 1 - Text</label>
                             <input type="text" class="form-control" id="q1" name="q1" placeholder="Enter answer">
@@ -88,6 +423,7 @@
                             <label for="q5">Question 5 - Textarea</label>
                             <textarea class="form-control" id="q5" name="q5" placeholder="Enter response"></textarea>
                         </div>
+                        -->
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </form>
                 </div>

@@ -37,17 +37,20 @@
                     <hr>
                     <table class="table table-bordered">
                         <tbody>
+                            <!-- First Independent Variable-->
                             <tr>
                                 <td>Technique</td>
-                                <td><span class="js-expt-technique">ACP</span></td>
+                                <td><span class="js-expt-technique">AutoComPaste</span></td>
                             </tr>
+                            <!-- Second Independent Variable-->
                             <tr>
                                 <td>Granularity</td>
                                 <td><span class="js-expt-granularity">Phrase</span></td>
                             </tr>
+                            <!-- Third Independent Variable-->
                             <tr>
-                                <td>Independent Variable 3</td>
-                                <td>???</td>
+                                <td>Visibility</td>
+                                <td><span class="js-expt-visibility">Visible</span></td>
                             </tr>
                             <tr>
                                 <td>Trial</td>
@@ -121,6 +124,7 @@
             $(document).ready(function () {
                 $.get('data/experiments.json', function (data) {
                     trialsData = data.experiments;
+                    console.log(data);
                     currentTrial = 0;
                     totalNumberOfTrials = trialsData.length;
                     $('.js-expt-num-trials').text(totalNumberOfTrials);

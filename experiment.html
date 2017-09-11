@@ -84,7 +84,7 @@
             var trialsData;
             var currentTrial;
             var totalNumberOfTrials;
-            var headers = ['Participant id', 'Technique', 'Granularity',
+            var headers = ['Participant id', 'Technique', 'Granularity', 'Visibility',
                             'Trial no', 'Stimuli', 'User Response', 'Trial Start Time',
                             'Trial End Time', 'Trial Time', 'Accuracy'];
             var trialData = [];
@@ -96,6 +96,7 @@
 
                     var technique = trialResult.technique;
                     var granularity = trialResult.granularity;
+                    var visibility = trialResult.visibility;
                     var trialNum = currentTrial;
                     var stimuli = trialResult.stimuli;
                     var userResponse = trialResult.user_response;
@@ -104,7 +105,7 @@
                     var trialDuration = trialResult.duration;
                     var accuracy = stimuli === userResponse ? 1 : 0;
 
-                    var row = [pid, technique, granularity, trialNum,
+                    var row = [pid, technique, granularity, visibility, trialNum,
                                 stimuli, userResponse, trialStartTime,
                                 trialEndTime, trialDuration, accuracy];
                     trialData.push(row);
@@ -124,7 +125,6 @@
             $(document).ready(function () {
                 $.get('data/experiments.json', function (data) {
                     trialsData = data.experiments;
-                    console.log(data);
                     currentTrial = 0;
                     totalNumberOfTrials = trialsData.length;
                     $('.js-expt-num-trials').text(totalNumberOfTrials);

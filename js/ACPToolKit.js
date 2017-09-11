@@ -81,11 +81,14 @@ var ACPToolKit = (function () {
 
             var data_file = options.data_file;
             var stimuli = options.stimuli;
-
+                
             $('.js-expt-technique').text(options.technique);
             $('.js-expt-granularity').text(options.granularity);
+            $('.js-expt-visibility').text(options.visibility);
             $('.js-expt-stimuli').text(options.stimuli);
 
+            var isVisible = options.visibility === "visible";
+            
             // Clean up DOM
             wm.destroyAllWindows();
             $('#autocompaste-completion').remove();
@@ -119,12 +122,20 @@ var ACPToolKit = (function () {
                     var win = wm.getWindowContent(windows[i]);
                     var content = $(win).find('pre').html();
                     lines_to_highlight.map (function (value, index, array) {
-                        content = content.replace (value,
-                        "<span class=\"highlighted\">" + value + "</span>");
+//                        content = content.replace (value,
+//                        "<span class=\"highlighted\">" + value + "</span>");
+                        content = content.replace (value, 
+                        function(token) {
+                            if (isVisible) {
+                                wm.setFocus(windows[i]);
+                            }
+                            return "<span class=\"highlighted\">" + token + "</span>";
+                        });
                     });
 
                   $(win).find('pre').empty().append(content);
                 }
+                
             });
         }
 

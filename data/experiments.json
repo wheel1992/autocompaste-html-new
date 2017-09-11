@@ -1,40 +1,292 @@
 {
     "experiments": [
         { 
-            "technique": "AUTOCOMPASTE", 
-            "granularity": "sentence",
-            "data_file": "data/texts.json",
-            "stimuli": "What is acceptor atoms?" 
-        },
-        { 
-            "technique": "AUTOCOMPASTE", 
-            "granularity": "paragraph",
-            "data_file": "data/texts.json",
-            "stimuli": "What is AC coupling? Circuit that passes an AC signal while blocking a DC voltage." 
-        },
-        { 
-            "technique": "AUTOCOMPASTE", 
+            "technique": "TRADITIONAL", 
             "granularity": "phrase",
+            "visibility": "visible",
+            "description": "Condition 0; XWin, V, Pe, Trial 0",
             "data_file": "data/texts.json",
             "stimuli": "number of positive charges" 
         },
         { 
             "technique": "TRADITIONAL", 
-            "granularity": "sentence",
+            "granularity": "phrase",
+            "visibility": "visible",
+            "description": "Condition 0; XWin, V, Pe, Trial 1",
             "data_file": "data/texts.json",
-            "stimuli": "What is acceptor atoms?" 
-        },
-        { 
-            "technique": "TRADITIONAL", 
-            "granularity": "paragraph",
-            "data_file": "data/texts.json",
-            "stimuli": "What is AC coupling? Circuit that passes an AC signal while blocking a DC voltage." 
+            "stimuli": "Magnitude or size of a signal" 
         },
         { 
             "technique": "TRADITIONAL", 
             "granularity": "phrase",
+            "visibility": "visible",
+            "description": "Condition 0; XWin, V, Pe, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "Approximately 20 Hz to 20 kHz"
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "visibility": "visible",
+            "description": "Condition 1; XWin, V, S, Trial 0",
+            "data_file": "data/texts.json",
+            "stimuli": "What is ampere? Unit of electrical current. 12 is the number" 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "visibility": "visible",
+            "description":"Condition 1; XWin, V, S, Trial 1",
+            "data_file": "data/texts.json",
+            "stimuli": "What is attenuate? To reduce the amplitude of an action or signal. The opposite of amplification." 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "visibility": "visible",
+            "description":"Condition 1; XWin, V, S, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "What is bandwidth? Width of the band of frequencies between the half power points." 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "visibility": "visible",
+            "description":"Condition 1; XWin, V, Ph, Trial 0",
+            "data_file": "data/texts.json",
+            "stimuli": "What is bistable multivibrator? A multi vibrator with two stable states. An external signal is required to change the output from one state to the other. Also called a latch." 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "visibility": "visible",
+            "description":"Condition 2; XWin, V, Ph, Trial 1",
+            "data_file": "data/texts.json",
+            "stimuli": "Traditionally in English, an article is usually considered to be a type of adjective. In some languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. It is also possible for articles to be part of another part of speech category such as a determiner, an English part of speech category that combines articles and demonstratives." 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "visibility": "visible",
+            "description":"Condition 2; XWin, V, Ph, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "In languages that employ articles, every common noun, with some exceptions, is expressed with a certain definiteness, just as many languages express every noun with a certain grammatical number. Every noun must be accompanied by the article, if any, corresponding to its definiteness, and the lack of an article (considered a zero article) itself specifies a certain definiteness. This is in contrast to other adjectives and determiners, which are typically optional. This obligatory nature of articles makes them among the most common words in many languages - in English, for example, the most frequent word is the." 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "visibility": "invisible",
+            "description":"Condition 3; XWin, IV, Pe, Trial 0",
             "data_file": "data/texts.json",
             "stimuli": "number of positive charges" 
-        }        
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "visibility": "invisible",
+            "description":"Condition 3; XWin, IV, Pe, Trial 1",
+            "data_file": "data/texts.json",
+            "stimuli": "Magnitude or size of a signal" 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "visibility": "invisible",
+            "description":"Condition 3; XWin, IV, Pe, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "Approximately 20 Hz to 20 kHz"
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "visibility": "invisible",
+            "description":"Condition 4; XWin, V, S, Trial 0",
+            "data_file": "data/texts.json",
+            "stimuli": "What is ampere? Unit of electrical current. 12 is the number" 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "visibility": "invisible",
+            "description":"Condition 4; XWin, V, S, Trial 1",
+            "data_file": "data/texts.json",
+            "stimuli": "What is attenuate? To reduce the amplitude of an action or signal. The opposite of amplification." 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "visibility": "invisible",
+            "description":"Condition 4; XWin, V, S, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "What is bandwidth? Width of the band of frequencies between the half power points." 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "visibility": "invisible",
+            "description":"Condition 5; XWin, IV, Ph, Trial 0",
+            "data_file": "data/texts.json",
+            "stimuli": "What is bistable multivibrator? A multi vibrator with two stable states. An external signal is required to change the output from one state to the other. Also called a latch." 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "visibility": "invisible",
+            "description":"Condition 5; XWin, IV, Ph, Trial 1",
+            "data_file": "data/texts.json",
+            "stimuli": "Traditionally in English, an article is usually considered to be a type of adjective. In some languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. It is also possible for articles to be part of another part of speech category such as a determiner, an English part of speech category that combines articles and demonstratives." 
+        },
+        { 
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "visibility": "invisible",
+            "description":"Condition 5; XWin, IV, Ph, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "In languages that employ articles, every common noun, with some exceptions, is expressed with a certain definiteness, just as many languages express every noun with a certain grammatical number. Every noun must be accompanied by the article, if any, corresponding to its definiteness, and the lack of an article (considered a zero article) itself specifies a certain definiteness. This is in contrast to other adjectives and determiners, which are typically optional. This obligatory nature of articles makes them among the most common words in many languages - in English, for example, the most frequent word is the." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "phrase",
+            "visibility": "visible",
+            "description":"Condition 6; ACP, V, Pe, Trial 0",
+            "data_file": "data/texts.json",
+            "stimuli": "number of positive charges" 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "phrase",
+            "visibility": "visible",
+            "description":"Condition 6; ACP, V, Pe, Trial 1",
+            "data_file": "data/texts.json",
+            "stimuli": "Magnitude or size of a signal" 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "phrase",
+            "visibility": "visible",
+            "description":"Condition 6; ACP, V, Pe, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "Approximately 20 Hz to 20 kHz"
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "sentence",
+            "visibility": "visible",
+            "description":"Condition 7; ACP, V, S, Trial 0",
+            "data_file": "data/texts.json",
+            "stimuli": "What is ampere? Unit of electrical current. 12 is the number" 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "sentence",
+            "visibility": "visible",
+            "description":"Condition 7; ACP, V, S, Trial 1",
+            "data_file": "data/texts.json",
+            "stimuli": "What is attenuate? To reduce the amplitude of an action or signal. The opposite of amplification." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "sentence",
+            "visibility": "visible",
+            "description":"Condition 7; ACP, V, S, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "What is bandwidth? Width of the band of frequencies between the half power points." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "visibility": "visible",
+            "description":"Condition 8; ACP, V, Ph, Trial 0",
+            "data_file": "data/texts.json",
+            "stimuli": "What is bistable multivibrator? A multi vibrator with two stable states. An external signal is required to change the output from one state to the other. Also called a latch." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "visibility": "visible",
+            "description":"Condition 8; ACP, V, Ph, Trial 1",
+            "data_file": "data/texts.json",
+            "stimuli": "Traditionally in English, an article is usually considered to be a type of adjective. In some languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. It is also possible for articles to be part of another part of speech category such as a determiner, an English part of speech category that combines articles and demonstratives ." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "visibility": "visible",
+            "description":"Condition 8; ACP, V, Ph, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "In languages that employ articles, every common noun, with some exceptions, is expressed with a certain definiteness, just as many languages express every noun with a certain grammatical number. Every noun must be accompanied by the article, if any, corresponding to its definiteness, and the lack of an article (considered a zero article) itself specifies a certain definiteness. This is in contrast to other adjectives and determiners, which are typically optional. This obligatory nature of articles makes them among the most common words in many languages - in English, for example, the most frequent word is the." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "phrase",
+            "visibility": "invisible",
+            "description":"Condition 9; ACP, IV, Pe, Trial 0",
+            "data_file": "data/texts.json",
+            "stimuli": "number of positive charges" 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "phrase",
+            "visibility": "invisible",
+            "description":"Condition 9; ACP, IV, Pe, Trial 1",
+            "data_file": "data/texts.json",
+            "stimuli": "Magnitude or size of a signal" 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "phrase",
+            "visibility": "invisible",
+            "description":"Condition 9; ACP, IV, Pe, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "Approximately 20 Hz to 20 kHz"
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "sentence",
+            "visibility": "invisible",
+            "description":"Condition 10; ACP, IV, S, Trial 0",
+            "data_file": "data/texts.json",
+            "stimuli": "What is ampere? Unit of electrical current. 12 is the number" 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "sentence",
+            "visibility": "invisible",
+            "description":"Condition 10; ACP, IV, S, Trial 1",
+            "data_file": "data/texts.json",
+            "stimuli": "What is attenuate? To reduce the amplitude of an action or signal. The opposite of amplification." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "sentence",
+            "visibility": "invisible",
+            "description":"Condition 10; ACP, IV, S, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "What is bandwidth? Width of the band of frequencies between the half power points." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "visibility": "invisible",
+            "description":"Condition 11; ACP, IV, Ph, Trial 0",
+            "data_file": "data/texts.json",
+            "stimuli": "What is bistable multivibrator? A multi vibrator with two stable states. An external signal is required to change the output from one state to the other. Also called a latch." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "visibility": "invisible",
+            "description":"Condition 11; ACP, IV, Ph, Trial 1",
+            "data_file": "data/texts.json",
+            "stimuli": "Traditionally in English, an article is usually considered to be a type of adjective. In some languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. It is also possible for articles to be part of another part of speech category such as a determiner, an English part of speech category that combines articles and demonstratives." 
+        },
+        { 
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "visibility": "invisible",
+            "description":"Condition 11; ACP, IV, Ph, Trial 2",
+            "data_file": "data/texts.json",
+            "stimuli": "In languages that employ articles, every common noun, with some exceptions, is expressed with a certain definiteness, just as many languages express every noun with a certain grammatical number. Every noun must be accompanied by the article, if any, corresponding to its definiteness, and the lack of an article (considered a zero article) itself specifies a certain definiteness. This is in contrast to other adjectives and determiners, which are typically optional. This obligatory nature of articles makes them among the most common words in many languages - in English, for example, the most frequent word is the." 
+        }
     ]
 }

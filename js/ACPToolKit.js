@@ -4,6 +4,7 @@ var ACPToolKit = (function () {
 
     module.setCurrentParticipantId = function (pid) {
         DataStorage.setItem('pid', pid);
+//        this.setCurrentParticipantCount(this.getCurrentParticipantCount() + 1);
     }
 
     module.getCurrentParticipantId = function () {
@@ -15,9 +16,22 @@ var ACPToolKit = (function () {
         }
         return pid;
     }
+    
+    module.setCurrentBlockNumber = function(count) {
+        DataStorage.setItem('blocknumber', count);
+    }
+    
+    module.getCurrentBlockNumber = function () {
+        var num = DataStorage.getItem('blocknumber');
+        if (!num) {
+            num = prompt('Please set block number. Enter current block number:').toString();
+            this.setCurrentBlockNumber(num);
+        }
+        return num;
+    }
 
     module.clearAllData = function () {
-        ['pid', 'pretest', 'trials', 'posttest'].forEach(function (key) {
+        ['pid', 'pretest', 'trials', 'posttest', 'pcount', 'porders', 'blocknumber'].forEach(function (key) {
             DataStorage.removeItem(key);
         });
     }
@@ -127,7 +141,13 @@ var ACPToolKit = (function () {
                         content = content.replace (value, 
                         function(token) {
                             if (isVisible) {
+                                var _win = wm.getWindow(windows[i]);
+                                var _midX = (wm.getDisplayWidth() - _win.struct.clientWidth) / 2;
+                                var _midY = (wm.getDisplayHeight() - _win.struct.clientHeight) / 2;
+                                
+                                wm.moveWindowTo(windows[i], _midX, _midY);
                                 wm.setFocus(windows[i]);
+                                
                             }
                             return "<span class=\"highlighted\">" + token + "</span>";
                         });

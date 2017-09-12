@@ -690,7 +690,11 @@ var WindowManager = (function () {
         }
       }
     };
-
+      
+    this.getWindow = function getWindow(name) {
+        return privates.windows[name];  
+    };
+      
     /** Constructor */
     if (display == undefined) {
       console.error("WindowManager: display must be given");

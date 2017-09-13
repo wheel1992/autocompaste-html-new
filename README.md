@@ -275,14 +275,14 @@ Generate dynamic conditions for each block of trials.
     e.g. for 1st 3 conditions under phrase, next 3 under sentence subsequent 3 under paragraph, set number = 3
 
 
--`generateParticipantOrder(tArray, vArray, gArray)`
+- `generateParticipantOrder(tArray, vArray, gArray)`
     
     **Description:**
 
     Generates a list of participants with specific condition
 
 
--`generateCondition(trialArray, tArray, vArray, gArray, blockArray)`
+- `generateCondition(trialArray, tArray, vArray, gArray, blockArray)`
 
     **Description:**
 

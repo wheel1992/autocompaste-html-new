@@ -215,6 +215,59 @@ Paths to data object files are being passed into the `ACPToolKit.presentTrial()`
 Each object in the array will be transformed into a window and displayed in the interface, with `title` corresponding to the window title and text content loaded from the file located at `url`. Refer to `data/texts.json` for an example of the data object file. Each article should be in the `.txt` format.
 
 
+## Updates / Changes
+
+#### ACPToolKit.js
+
+- `setCurrentBlockNumber(number)`
+
+	**Description:**
+	Changes the current block number value, that toggles the correct combination of trials.
+
+- `getCurrentBlockNumber()`
+
+	**Returns:** 
+	- `blockNumber`: The current block number.
+	
+	**Description:**
+
+	 If the block number has not been set, the user will be prompted to enter a integer value.
+
+- `presentTrial()`
+
+    **Description:**
+	Added set focus for selected window. Set z-index to 0 for invisible selected window.
+    
+    ```javascript
+    ...
+    
+    iface.addEventListener('loaded', function () {
+        ...
+        
+        lines_to_highlight.map (function (value, index, array) {
+            content = content.replace (value, 
+            function(token) {
+                if (isVisible) {
+                    var _win = wm.getWindow(windows[i]);
+                    var _midX = (wm.getDisplayWidth() - _win.struct.clientWidth) / 2;
+                    var _midY = (wm.getDisplayHeight() - _win.struct.clientHeight) / 2;
+
+                    wm.moveWindowTo(windows[i], _midX, _midY);
+                    wm.setFocus(windows[i]);
+
+                } else {
+                    wm.setBehind(windows[i]);
+                }
+                return "<span class=\"highlighted\">" + token + "</span>";
+            });
+        });
+        
+        ...
+    });
+    ...
+    
+    ```
+
 ## Credits
 
 - Tay Yang Shun (Interface and ACPToolKit)

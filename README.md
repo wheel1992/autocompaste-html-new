@@ -219,8 +219,6 @@ Each object in the array will be transformed into a window and displayed in the 
 
 #### experiment.html
 
-**Description:**
-
 Use experiments_mod.json for populating dynamic conditions for each block. Use DynamicCondition class to generate dynamic condition.
     
     ```javascript
@@ -243,8 +241,6 @@ Use experiments_mod.json for populating dynamic conditions for each block. Use D
     
 #### DynamicCondition.js
     
-**Description:**
-
 Generate dynamic conditions for each block of trials.
     
 - `setNumberOfParticipants(number)`
@@ -379,8 +375,6 @@ Generate dynamic conditions for each block of trials.
     
 
 #### experiments_mod.json
-
-**Description:**
 
 Contains a list of techniques, granularity, visibility, block orders and different levels of granularity of texts
 

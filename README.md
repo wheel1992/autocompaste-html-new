@@ -217,6 +217,78 @@ Each object in the array will be transformed into a window and displayed in the 
 
 ## Updates / Changes
 
+#### experiment.html
+
+**Description:**
+
+Use experiments_mod.json for populating dynamic conditions for each block. Use DynamicCondition class to generate dynamic condition.
+    
+    ```javascript
+    
+    ...
+        $(document).ready(function () {
+            $.get('data/experiments_mod.json', function (data) {
+                ...
+                DynamicCondition.setNumberOfParticipants(12);
+                DynamicCondition.setNumberGroupTechniques(6);
+                DynamicCondition.setNumberGroupVisibility(3);
+                DynamicCondition.setNumberGroupGranularity(3);
+                ...
+            })
+        });
+    ...
+    
+    ```
+    
+    
+#### DynamicCondition.js
+    
+**Description:**
+
+Generate dynamic conditions for each block of trials.
+    
+- `setNumberOfParticipants(number)`
+    
+    **Description:**
+	
+    Set number of participants before generating conditions.
+        
+- `setNumberGroupTechniques(number)`
+
+    **Description:**
+
+    Set number of techniques in each group before generating conditions.
+    e.g. for 1st 6 conditions under technique A and subsequent 6 under technique B, set number = 6
+    
+- `setNumberGroupVisibility(number)`
+
+    **Description:**
+
+    Set number of visibility in each group before generating conditions.
+    e.g. for 1st 3 conditions under visible and subsequent 3 under invisible, set number = 3
+
+- `setNumberGroupGranularity(number)`
+
+    **Description:**
+
+    Set number of granularity in each group before generating conditions.
+    e.g. for 1st 3 conditions under phrase, next 3 under sentence subsequent 3 under paragraph, set number = 3
+
+
+-`generateParticipantOrder(tArray, vArray, gArray)`
+    
+    **Description:**
+
+    Generates a list of participants with specific condition
+
+
+-`generateCondition(trialArray, tArray, vArray, gArray, blockArray)`
+
+    **Description:**
+
+    Generates a list of conditions for 1 participant; Conditions are determined by participant Id and Trials are determined by the block number.
+
+    
 #### ACPToolKit.js
 
 - `setCurrentBlockNumber(number)`
@@ -236,7 +308,8 @@ Each object in the array will be transformed into a window and displayed in the 
 - `presentTrial()`
 
     **Description:**
-	Added set focus for selected window. Set z-index to 0 for invisible selected window.
+	
+    Added set focus for selected window. Set z-index to 0 for invisible selected window.
     
     ```javascript
     ...
@@ -267,6 +340,50 @@ Each object in the array will be transformed into a window and displayed in the 
     ...
     
     ```
+    
+#### WindowManager.js
+
+- `setBehind(name)`
+
+	**Description:**
+	
+    Set z-index to 0 for invisible selected window.
+    
+    ```javascript
+    ...
+    
+    this.setBehind = function setBehind(name) {
+        if (name == undefined) {
+            console.error("WindowManager.setFocus: name must be given");
+            return;
+        }
+
+        if (typeof name != 'string' && !(name instanceof String)) {
+            console.error("WindowManager.setFocus: name must be a string");
+            return;
+        }
+
+        if (!privates.windows[name]) {
+            console.error("WindowManager.setFocus: Window does not exist");
+            return;
+        }
+        // Obtain the window structure.
+        var win_struct = privates.windows[name].struct
+      
+        $(win_struct).removeClass('wm-window-focused');
+        $(win_struct)
+            .css('z-index', 0);
+    };
+    ...
+    ```
+    
+
+#### experiments_mod.json
+
+**Description:**
+
+Contains a list of techniques, granularity, visibility, block orders and different levels of granularity of texts
+
 
 ## Credits
 

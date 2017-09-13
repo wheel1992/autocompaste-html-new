@@ -221,22 +221,22 @@ Each object in the array will be transformed into a window and displayed in the 
 
 Use experiments_mod.json for populating dynamic conditions for each block. Use DynamicCondition class to generate dynamic condition.
     
-    ```javascript
-    
-    ...
-        $(document).ready(function () {
-            $.get('data/experiments_mod.json', function (data) {
-                ...
-                DynamicCondition.setNumberOfParticipants(12);
-                DynamicCondition.setNumberGroupTechniques(6);
-                DynamicCondition.setNumberGroupVisibility(3);
-                DynamicCondition.setNumberGroupGranularity(3);
-                ...
-            })
-        });
-    ...
-    
-    ```
+```javascript
+
+...
+    $(document).ready(function () {
+        $.get('data/experiments_mod.json', function (data) {
+            ...
+            DynamicCondition.setNumberOfParticipants(12);
+            DynamicCondition.setNumberGroupTechniques(6);
+            DynamicCondition.setNumberGroupVisibility(3);
+            DynamicCondition.setNumberGroupGranularity(3);
+            ...
+        })
+    });
+...
+
+```
     
     
 #### DynamicCondition.js

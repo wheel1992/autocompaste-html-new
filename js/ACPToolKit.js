@@ -148,6 +148,8 @@ var ACPToolKit = (function () {
                                 wm.moveWindowTo(windows[i], _midX, _midY);
                                 wm.setFocus(windows[i]);
                                 
+                            } else {
+                                wm.setBehind(windows[i]);
                             }
                             return "<span class=\"highlighted\">" + token + "</span>";
                         });

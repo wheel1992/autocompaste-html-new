@@ -44,15 +44,15 @@
     "trials": {
         "phrase": [
             {
-                "stimuli": "number of positive charges",
+                "stimuli": "Unit of electrical current.",
                 "description": "Pe T0"
             },
             {
-                "stimuli": "Magnitude or size of a signal",
+                "stimuli": "Magnitude or size of a signal voltage or current.",
                 "description": "Pe T1"
             },
             {
-                "stimuli": "Relating to frequencies",
+                "stimuli": "Relating to frequencies that can be heard by the human ear.",
                 "description": "Pe T2"
             }
         ],

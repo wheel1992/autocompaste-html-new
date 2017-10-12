@@ -35,11 +35,391 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h1>Post-Experiment Questionnaire</h1>
                     <hr>
-                    <p>This part of the interface collects whatever post-experiment information. After the experiment, you want to collect more qualitative and quantitative feedback about the tested techniques. Some of the typical questions include, personal preferences, any difficulties participants experienced in the experiment, and areas of improvement. Please design a basic post-experimental questionnaire (no more than 10 questions).</p>
+<!--                    <p>This part of the interface collects whatever post-experiment information. After the experiment, you want to collect more qualitative and quantitative feedback about the tested techniques. Some of the typical questions include, personal preferences, any difficulties participants experienced in the experiment, and areas of improvement. Please design a basic post-experimental questionnaire (no more than 10 questions).</p>-->
 
                     <p>Current participant: <span class="js-pid pid"></span></p>
 
                     <form id="post-expt-form">
+                        
+                        <!-- Question 1 -->
+                        <div class="form-group">
+                            <label for="q1">1. AutoComPaste helps me be more effective</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q1" id="optionsRadios1" value="1">
+                                Strongly Disagree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q1" id="optionsRadios2" value="2">
+                                Disagree
+                              </label>
+                            </div>
+                             <div class="radio">
+                              <label>
+                                <input type="radio" name="q1" id="optionsRadios3" value="3">
+                                Neutral
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q1" id="optionsRadios4" value="4">
+                                Agree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q1" id="optionsRadios5" value="5">
+                                Strongly Agree
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 2 -->
+                        <div class="form-group">
+                            <label for="q2">2. It helps me be more productive</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q2" id="optionsRadios6" value="1">
+                                Strongly Disagree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q2" id="optionsRadios7" value="2">
+                                Disagree
+                              </label>
+                            </div>
+                             <div class="radio">
+                              <label>
+                                <input type="radio" name="q2" id="optionsRadios8" value="3">
+                                Neutral
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q2" id="optionsRadios9" value="4">
+                                Agree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q2" id="optionsRadios10" value="5">
+                                Strongly Agree
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 3 -->
+                        <div class="form-group">
+                            <label for="q3">3. It makes the things I want to accomplish easier </label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q3" id="optionsRadios11" value="1">
+                                Strongly Disagree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q3" id="optionsRadios12" value="2">
+                                Disagree
+                              </label>
+                            </div>
+                             <div class="radio">
+                              <label>
+                                <input type="radio" name="q3" id="optionsRadios13" value="3">
+                                Neutral
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q3" id="optionsRadios14" value="4">
+                                Agree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q3" id="optionsRadios15" value="5">
+                                Strongly Agree
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 4 -->
+                        <div class="form-group">
+                            <label for="q4">4. It saves me time when I use it</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q4" id="optionsRadios16" value="1">
+                                Strongly Disagree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q4" id="optionsRadios17" value="2">
+                                Disagree
+                              </label>
+                            </div>
+                             <div class="radio">
+                              <label>
+                                <input type="radio" name="q4" id="optionsRadios18" value="3">
+                                Neutral
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q4" id="optionsRadios19" value="4">
+                                Agree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q4" id="optionsRadios20" value="5">
+                                Strongly Agree
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 5 -->
+                        <div class="form-group">
+                            <label for="q5">5. It requires the fewest steps possible to accomplish what I want to do with it</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q5" id="optionsRadios21" value="1">
+                                Strongly Disagree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q5" id="optionsRadios22" value="2">
+                                Disagree
+                              </label>
+                            </div>
+                             <div class="radio">
+                              <label>
+                                <input type="radio" name="q5" id="optionsRadios23" value="3">
+                                Neutral
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q5" id="optionsRadios24" value="4">
+                                Agree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q5" id="optionsRadios25" value="5">
+                                Strongly Agree
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 6 -->
+                        <div class="form-group">
+                            <label for="q6">6. I learned to use it quickly</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q6" id="optionsRadios26" value="1">
+                                Strongly Disagree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q6" id="optionsRadios27" value="2">
+                                Disagree
+                              </label>
+                            </div>
+                             <div class="radio">
+                              <label>
+                                <input type="radio" name="q6" id="optionsRadios28" value="3">
+                                Neutral
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q6" id="optionsRadios29" value="4">
+                                Agree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q6" id="optionsRadios30" value="5">
+                                Strongly Agree
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 7 -->
+                        <div class="form-group">
+                            <label for="q7">7. It is  easy to learn to use it</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q7" id="optionsRadios31" value="1">
+                                Strongly Disagree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q7" id="optionsRadios32" value="2">
+                                Disagree
+                              </label>
+                            </div>
+                             <div class="radio">
+                              <label>
+                                <input type="radio" name="q7" id="optionsRadios33" value="3">
+                                Neutral
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q7" id="optionsRadios34" value="4">
+                                Agree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q7" id="optionsRadios35" value="5">
+                                Strongly Agree
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 8 -->
+                        <div class="form-group">
+                            <label for="q8">8. I would use AutoComPaste for</label>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" name="q8" value="phrase">
+                                Phrase
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" name="q8" value="sentence">
+                                Sentence
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" name="q8" value="paragraph">
+                                Paragraph
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 9 -->
+                        <div class="form-group">
+                            <label for="q9">9. You will use AutoComPaste for phrase</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q9" id="optionsRadios36" value="1">
+                                Strongly Disagree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q9" id="optionsRadios37" value="2">
+                                Disagree
+                              </label>
+                            </div>
+                             <div class="radio">
+                              <label>
+                                <input type="radio" name="q9" id="optionsRadios38" value="3">
+                                Neutral
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q9" id="optionsRadios39" value="4">
+                                Agree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q9" id="optionsRadios40" value="5">
+                                Strongly Agree
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 10 -->
+                        <div class="form-group">
+                            <label for="q10">10. You will use AutoComPaste for sentence</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios41" value="1">
+                                Strongly Disagree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios42" value="2">
+                                Disagree
+                              </label>
+                            </div>
+                             <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios43" value="3">
+                                Neutral
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios44" value="4">
+                                Agree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q10" id="optionsRadios45" value="5">
+                                Strongly Agree
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 11 -->
+                        <div class="form-group">
+                            <label for="q11">11. You will use AutoComPaste for phrase</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q11" id="optionsRadios46" value="1">
+                                Strongly Disagree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q11" id="optionsRadios47" value="2">
+                                Disagree
+                              </label>
+                            </div>
+                             <div class="radio">
+                              <label>
+                                <input type="radio" name="q11" id="optionsRadios48" value="3">
+                                Neutral
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q11" id="optionsRadios49" value="4">
+                                Agree
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q11" id="optionsRadios50" value="5">
+                                Strongly Agree
+                              </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 12 -->
+                        <div class="form-group">
+                            <label for="q12">10. For each of the previous questions you have ranked using a 2 (disagree) or a 1 (strongly disagree), briefly explain why. </label>
+                            <textarea class="form-control" id="q12" name="q12" placeholder="Enter your response here"></textarea>
+                        </div>
+<!--
                         <div class="form-group">
                             <label for="q1">Question 1 - Text</label>
                             <input type="text" class="form-control" id="q1" name="q1" placeholder="Enter answer">
@@ -88,6 +468,7 @@
                             <label for="q5">Question 5 - Textarea</label>
                             <textarea class="form-control" id="q5" name="q5" placeholder="Enter response"></textarea>
                         </div>
+-->
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </form>
                 </div>

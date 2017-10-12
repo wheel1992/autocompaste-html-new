@@ -215,7 +215,172 @@ Paths to data object files are being passed into the `ACPToolKit.presentTrial()`
 Each object in the array will be transformed into a window and displayed in the interface, with `title` corresponding to the window title and text content loaded from the file located at `url`. Refer to `data/texts.json` for an example of the data object file. Each article should be in the `.txt` format.
 
 
+## Updates / Changes
+
+#### experiment.html
+
+Use experiments_mod.json for populating dynamic conditions for each block. Use DynamicCondition class to generate dynamic condition.
+    
+```javascript
+
+...
+    $(document).ready(function () {
+        $.get('data/experiments_mod.json', function (data) {
+            ...
+            DynamicCondition.setNumberOfParticipants(12);
+            DynamicCondition.setNumberGroupTechniques(6);
+            DynamicCondition.setNumberGroupVisibility(3);
+            DynamicCondition.setNumberGroupGranularity(3);
+            ...
+        })
+    });
+...
+
+```
+    
+    
+#### DynamicCondition2.js
+    
+Generate dynamic conditions for each block of trials.
+    
+- `setNumberOfParticipants(number)`
+    
+    **Description:**
+	
+    Set number of participants before generating conditions.
+        
+- `setNumberGroupTechniques(number)`
+
+    **Description:**
+
+    Set number of techniques in each group before generating conditions.
+    e.g. for 1st 6 conditions under technique A and subsequent 6 under technique B, set number = 6
+    
+- `setNumberGroupVisibility(number)`
+
+    **Description:**
+
+    Set number of visibility in each group before generating conditions.
+    e.g. for 1st 3 conditions under visible and subsequent 3 under invisible, set number = 3
+
+- `setNumberGroupGranularity(number)`
+
+    **Description:**
+
+    Set number of granularity in each group before generating conditions.
+    e.g. for 1st 3 conditions under phrase, next 3 under sentence subsequent 3 under paragraph, set number = 3
+
+
+- `generateParticipantOrder(tArray, vArray, gArray)`
+    
+    **Description:**
+
+    Generates a list of participants with specific condition
+
+
+- `generateCondition(trialArray, tArray, vArray, gArray, blockArray)`
+
+    **Description:**
+
+    Generates a list of conditions for 1 participant; Conditions are determined by participant Id and Trials are determined by the block number.
+
+    
+#### ACPToolKit.js
+
+- `setCurrentBlockNumber(number)`
+
+	**Description:**
+	Changes the current block number value, that toggles the correct combination of trials.
+
+- `getCurrentBlockNumber()`
+
+	**Returns:** 
+	- `blockNumber`: The current block number.
+	
+	**Description:**
+
+	 If the block number has not been set, the user will be prompted to enter a integer value.
+
+- `presentTrial()`
+
+    **Description:**
+	
+    Added set focus for selected window. Set z-index to 0 for invisible selected window.
+    
+    ```javascript
+    ...
+    
+    iface.addEventListener('loaded', function () {
+        ...
+        
+        lines_to_highlight.map (function (value, index, array) {
+            content = content.replace (value, 
+            function(token) {
+                if (isVisible) {
+                    var _win = wm.getWindow(windows[i]);
+                    var _midX = (wm.getDisplayWidth() - _win.struct.clientWidth) / 2;
+                    var _midY = (wm.getDisplayHeight() - _win.struct.clientHeight) / 2;
+
+                    wm.moveWindowTo(windows[i], _midX, _midY);
+                    wm.setFocus(windows[i]);
+
+                } else {
+                    wm.setBehind(windows[i]);
+                }
+                return "<span class=\"highlighted\">" + token + "</span>";
+            });
+        });
+        
+        ...
+    });
+    ...
+    
+    ```
+    
+#### WindowManager.js
+
+- `setBehind(name)`
+
+	**Description:**
+	
+    Set z-index to 0 for invisible selected window.
+    
+    ```javascript
+    ...
+    
+    this.setBehind = function setBehind(name) {
+        if (name == undefined) {
+            console.error("WindowManager.setFocus: name must be given");
+            return;
+        }
+
+        if (typeof name != 'string' && !(name instanceof String)) {
+            console.error("WindowManager.setFocus: name must be a string");
+            return;
+        }
+
+        if (!privates.windows[name]) {
+            console.error("WindowManager.setFocus: Window does not exist");
+            return;
+        }
+        // Obtain the window structure.
+        var win_struct = privates.windows[name].struct
+      
+        $(win_struct).removeClass('wm-window-focused');
+        $(win_struct)
+            .css('z-index', 0);
+    };
+    ...
+    ```
+    
+
+#### experiments_mod.json
+
+Contains a list of techniques, granularity, visibility, block orders and different levels of granularity of texts
+
+
 ## Credits
 
 - Tay Yang Shun (Interface and ACPToolKit)
 - Wong Yong Jie (AutoComPaste Engine)
+- Joseph Cheng(Randomized the ordering of trials for each block)

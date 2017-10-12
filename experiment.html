@@ -52,6 +52,10 @@
                                 <td>Visibility</td>
                                 <td><span class="js-expt-visibility">Visible</span></td>
                             </tr>
+                             <tr>
+                                <td>Block</td>
+                                <td><span class="js-expt-current-block"></span></td>
+                            </tr>
                             <tr>
                                 <td>Trial</td>
                                 <td><span class="js-expt-current-trial"></span> / <span class="js-expt-num-trials"></span></td>
@@ -78,14 +82,16 @@
         <script src="js/autocompaste/autocompaste.js"></script>
         <script src="js/DataStorage.js"></script>
         <script src="js/ACPToolKit.js"></script>
-
+<!--        <script src="js/DynamicCondition.js"></script>-->
+        <script src="js/DynamicCondition2.js"></script>
         <script>
-
+            
             var trialsData;
+            var currentBlock;
             var currentTrial;
             var totalNumberOfTrials;
             var headers = ['Participant id', 'Technique', 'Granularity', 'Visibility',
-                            'Trial no', 'Stimuli', 'User Response', 'Trial Start Time',
+                            'Block no', 'Trial no', 'Stimuli', 'User Response', 'Trial Start Time',
                             'Trial End Time', 'Trial Time', 'Accuracy'];
             var trialData = [];
             var pid;
@@ -105,7 +111,8 @@
                     var trialDuration = trialResult.duration;
                     var accuracy = stimuli === userResponse ? 1 : 0;
 
-                    var row = [pid, technique, granularity, visibility, trialNum,
+                    var row = [pid, technique, granularity, visibility, 
+                               currentBlock, trialNum,
                                 stimuli, userResponse, trialStartTime,
                                 trialEndTime, trialDuration, accuracy];
                     trialData.push(row);
@@ -123,15 +130,92 @@
             }
 
             $(document).ready(function () {
-                $.get('data/experiments.json', function (data) {
-                    trialsData = data.experiments;
+                
+                $.get('data/experiments_mod_2.json', function (data) {
+                    
+                    pid = ACPToolKit.getCurrentParticipantId();
+                    
+                    // TEST
+                    
+                    currentBlock = ACPToolKit.getCurrentBlockNumber();
+                    $('.js-expt-current-block').text(currentBlock);
+                                         
+                    var techniques = data.techniques;
+                    var ivSecond = data.ivSecond;
+                    var ivThird = data.ivThird;
+                   
+                    
+                    DynamicCondition2.setNumberOfParticipants(12);
+                    DynamicCondition2.setNumberGroupTechniques(6);
+                    DynamicCondition2.setNumberGroupIvSecond(3);
+                    DynamicCondition2.setNumberGroupIvThird(3);
+                    
+                    var pOrders = DynamicCondition2.generateParticipantOrder(techniques, ivSecond, ivThird);
+                    
+                    DataStorage.setItem("porders", pOrders);
+
+                    var sOrder = DataStorage.getItem("porders")[pid - 1];
+                    
+                    var sConditions = DynamicCondition2.generateCondition(data.trials,
+                                                   data.techniques[sOrder.t_index].t, 
+                                                   data.ivSecond[sOrder.v_index].data, 
+                                                   data.ivThird[sOrder.g_index].data, 
+                                                   data.blocks[currentBlock].order);
+                    
+                    // END TEST
+                    
+                    trialsData = sConditions.experiments;
+//                    trialsData = data.experiments;
                     currentTrial = 0;
                     totalNumberOfTrials = trialsData.length;
                     $('.js-expt-num-trials').text(totalNumberOfTrials);
                     trialData.push(headers);
                     next();
-                    pid = ACPToolKit.getCurrentParticipantId();
+//                    pid = ACPToolKit.getCurrentParticipantId();
                 })
+                
+                
+//                $.get('data/experiments_mod.json', function (data) {
+//                    
+//                    pid = ACPToolKit.getCurrentParticipantId();
+//                    
+//                    // TEST
+//                    
+//                    currentBlock = ACPToolKit.getCurrentBlockNumber();
+//                    $('.js-expt-current-block').text(currentBlock);
+//                                         
+//                    var techniques = data.techniques;
+//                    var granularity = data.granularity;
+//                    var visibility = data.visibility;
+//                    
+//                    DynamicCondition.setNumberOfParticipants(12);
+//                    DynamicCondition.setNumberGroupTechniques(6);
+//                    DynamicCondition.setNumberGroupVisibility(3);
+//                    DynamicCondition.setNumberGroupGranularity(3);
+//                    
+//                    var pOrders = DynamicCondition.generateParticipantOrder(techniques, visibility, granularity);
+//                    
+//                    DataStorage.setItem("porders", pOrders);
+//
+//                    var sOrder = DataStorage.getItem("porders")[pid - 1];
+//                    
+//                    var sConditions = DynamicCondition.generateCondition(data.trials,
+//                                                   data.techniques[sOrder.t_index].t, 
+//                                                   data.visibility[sOrder.v_index].v, 
+//                                                   data.granularity[sOrder.g_index].g, 
+//                                                   data.blocks[currentBlock].order);
+//                    
+//                    // END TEST
+//                    
+//                    trialsData = sConditions.experiments;
+////                    trialsData = data.experiments;
+//                    currentTrial = 0;
+//                    totalNumberOfTrials = trialsData.length;
+//                    $('.js-expt-num-trials').text(totalNumberOfTrials);
+//                    trialData.push(headers);
+//                    next();
+////                    pid = ACPToolKit.getCurrentParticipantId();
+//                })
             });
         </script>
     </body>

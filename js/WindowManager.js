@@ -501,6 +501,29 @@ var WindowManager = (function () {
         name: name
       });
     };
+      
+    this.setBehind = function setBehind(name) {
+        if (name == undefined) {
+            console.error("WindowManager.setFocus: name must be given");
+            return;
+        }
+
+        if (typeof name != 'string' && !(name instanceof String)) {
+            console.error("WindowManager.setFocus: name must be a string");
+            return;
+        }
+
+        if (!privates.windows[name]) {
+            console.error("WindowManager.setFocus: Window does not exist");
+            return;
+        }
+        // Obtain the window structure.
+        var win_struct = privates.windows[name].struct
+      
+        $(win_struct).removeClass('wm-window-focused');
+        $(win_struct)
+            .css('z-index', 0);
+    };
 
     /**
      * Destroys the specified window.
@@ -690,7 +713,11 @@ var WindowManager = (function () {
         }
       }
     };
-
+      
+    this.getWindow = function getWindow(name) {
+        return privates.windows[name];  
+    };
+      
     /** Constructor */
     if (display == undefined) {
       console.error("WindowManager: display must be given");
